@@ -1,0 +1,24 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:androidpdf"
+             x:Class="androidpdf.MainPage"
+             x:DataType="local:MainPageViewModel"
+             Title="Сканирование v1.14 ">
+    <StackLayout>
+        <!-- Кнопка для сохранения -->
+        <Button Text="Сохранить в PDF"
+            Clicked="OnSaveToPdfClicked"
+            IsEnabled="True"
+            x:Name="SaveButton" />
+
+        <!-- Отображение изображения -->
+        <Image x:Name="ScannedImage" />
+
+        <!-- Индикатор загрузки -->
+        <ActivityIndicator x:Name="activityIndicator"
+                       IsVisible="{Binding IsRunning}"
+                       IsRunning="{Binding IsRunning}" 
+                       Color="Violet" />
+    </StackLayout>
+
+</ContentPage>
