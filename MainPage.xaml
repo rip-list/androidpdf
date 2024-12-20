@@ -3,10 +3,10 @@
              xmlns:local="clr-namespace:androidpdf"
              x:Class="androidpdf.MainPage"
              x:DataType="local:MainPageViewModel"
-             Title="Сканирование v1.14 ">
+             Title="Сканирование v1.27 ">
     <StackLayout>
         <!-- Кнопка для сохранения -->
-        <Button Text="Сохранить в PDF"
+        <Button Text="Сканировать\Сохранить"
             Clicked="OnSaveToPdfClicked"
             IsEnabled="True"
             x:Name="SaveButton" />

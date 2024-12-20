@@ -105,8 +105,14 @@ namespace androidpdf
             EnsureStreamIsAvailable(capturedImageStream, "В начале SaveImageToPdf");
 
             // Получаем безопасный путь для сохранения в AppDataDirectory
-            var appDataPath = FileSystem.AppDataDirectory;
-            var filePath = Path.Combine(appDataPath, "ScannedDocument.pdf");
+            var appDataPath = FileSystem.Current.AppDataDirectory;
+
+
+            // Генерируем уникальное имя файла с использованием временной метки
+            var uniqueFileName = $"ScannedDocument_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
+
+            // Генерируем путь для сохранения файла
+            var filePath = Path.Combine(appDataPath, uniqueFileName);
 
             using var pdfDocument = new PdfDocument();
             var pdfPage = pdfDocument.AddPage();
