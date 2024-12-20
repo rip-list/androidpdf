@@ -91,6 +91,7 @@ namespace androidpdf
             {
                 Console.WriteLine($"Ошибка при сохранении PDF: {ex}");
                 await DisplayAlert("Ошибка", $"Не удалось сохранить PDF: {ex.Message}", "ОК");
+                ((MainPageViewModel)BindingContext).IsRunning = false;
             }
             finally
             {
